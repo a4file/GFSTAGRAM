@@ -24,10 +24,10 @@ export default function ChatWindow({ character, onBack, onProfileClick }) {
   }
 
   return (
-    <div className="flex flex-col h-screen max-w-md mx-auto bg-white border-x border-gray-200 shadow-xl font-sans text-gray-900 overflow-hidden relative">
-      <header className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-white sticky top-0 z-10">
+    <div className="flex flex-col h-full w-full max-w-md mx-auto bg-white border-x border-gray-200 shadow-xl font-sans text-gray-900 overflow-hidden relative">
+      <header className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-white sticky top-0 z-10 safe-area-top touch-none">
         <div className="flex items-center gap-4">
-          <ChevronLeft className="w-7 h-7 cursor-pointer" onClick={onBack} />
+          <ChevronLeft className="w-7 h-7 cursor-pointer touch-manipulation" onClick={onBack} />
           <div className="flex items-center gap-3 cursor-pointer" onClick={onProfileClick}>
             {character.image ? (
               <img
@@ -55,9 +55,25 @@ export default function ChatWindow({ character, onBack, onProfileClick }) {
           </div>
         </div>
         <div className="flex items-center gap-4 text-gray-700">
-          <Phone className="w-5 h-5 cursor-pointer" />
-          <Video className="w-5 h-5 cursor-pointer" />
-          <Info className="w-5 h-5 cursor-pointer" onClick={onProfileClick} />
+          <button 
+            type="button"
+            className="touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
+          >
+            <Phone className="w-5 h-5" />
+          </button>
+          <button 
+            type="button"
+            className="touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
+          >
+            <Video className="w-5 h-5" />
+          </button>
+          <button 
+            type="button"
+            className="touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
+            onClick={onProfileClick}
+          >
+            <Info className="w-5 h-5" />
+          </button>
         </div>
       </header>
 

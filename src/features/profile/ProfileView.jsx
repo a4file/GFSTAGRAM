@@ -51,17 +51,17 @@ export default function ProfileView({ character, onBack, onOpenChat, onPostClick
       {/* 프로필 이미지 확대 뷰 */}
       {showProfileImage && selectedProfileImage && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 safe-area-inset"
           onClick={() => {
             setShowProfileImage(false);
             setSelectedProfileImage(null);
           }}
         >
-          <div className="relative">
+          <div className="relative max-w-full max-h-full">
             <img
               src={selectedProfileImage}
               alt="프로필 확대"
-              className="w-[400px] h-[400px] object-cover rounded-lg shadow-2xl"
+              className="max-w-full max-h-[80dvh] w-auto h-auto object-contain rounded-lg shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             />
             <button
@@ -77,8 +77,8 @@ export default function ProfileView({ character, onBack, onOpenChat, onPostClick
         </div>
       )}
 
-      <div className="flex flex-col h-screen max-w-md mx-auto bg-white border-x border-gray-200 shadow-xl font-sans text-gray-900 overflow-hidden overflow-y-auto">
-        <header className="px-4 py-3 flex items-center justify-between sticky top-0 bg-white border-b z-10">
+      <div className="flex flex-col h-full w-full max-w-md mx-auto bg-white border-x border-gray-200 shadow-xl font-sans text-gray-900 overflow-hidden overflow-y-auto">
+        <header className="px-4 py-3 flex items-center justify-between sticky top-0 bg-white border-b z-10 safe-area-top">
           <div className="flex items-center gap-8">
             <ArrowLeft className="w-6 h-6 cursor-pointer" onClick={onBack} />
             <div className="flex items-center gap-1">

@@ -5,7 +5,20 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        'screen-safe': '100dvh',
+        'dvh': '100dvh',
+      },
+      minHeight: {
+        'screen-safe': '100dvh',
+        'dvh': '100dvh',
+      },
+      maxHeight: {
+        'screen-safe': '100dvh',
+        'dvh': '100dvh',
+      },
+    },
   },
   plugins: [],
 }

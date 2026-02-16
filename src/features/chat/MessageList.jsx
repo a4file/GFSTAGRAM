@@ -15,7 +15,7 @@ export default function MessageList({ messages, isTyping }) {
   }, [messages, isTyping]);
 
   return (
-    <main ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-white">
+    <main ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-white overscroll-contain">
       {messages.map((msg) => (
         <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'} animate-in fade-in slide-in-from-bottom-2`}>
           <div className={`flex flex-col ${msg.sender === 'user' ? 'items-end' : 'items-start'} max-w-[80%]`}>

@@ -85,15 +85,21 @@ function App() {
     const isSaved = savedPosts.has(postId);
 
     return (
-      <div className="flex flex-col h-screen max-w-md mx-auto bg-white border-x border-gray-200 shadow-xl font-sans text-gray-900 overflow-hidden">
-        <header className="px-4 py-3 flex items-center justify-between sticky top-0 bg-white border-b z-10">
+      <div className="flex flex-col h-full w-full max-w-md mx-auto bg-white border-x border-gray-200 shadow-xl font-sans text-gray-900 overflow-hidden">
+        <header className="px-4 py-3 flex items-center justify-between sticky top-0 bg-white border-b z-10 safe-area-top touch-none">
           <div className="flex items-center gap-3">
-            <ArrowLeft className="w-6 h-6 cursor-pointer" onClick={() => setSelectedPost(null)} />
+            <button 
+              type="button"
+              className="touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
+              onClick={() => setSelectedPost(null)}
+            >
+              <ArrowLeft className="w-6 h-6" />
+            </button>
             <h1 className="text-lg font-bold">게시물</h1>
           </div>
         </header>
 
-        <main className="flex-1 overflow-y-auto">
+        <main className="flex-1 overflow-y-auto overscroll-contain">
           {/* 게시글 헤더 */}
           <div className="px-4 py-3 flex items-center justify-between border-b">
             <div className="flex items-center gap-3">

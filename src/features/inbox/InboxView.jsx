@@ -52,17 +52,17 @@ export default function InboxView({ onSelectCharacter, onOpenChat }) {
       {/* 프로필 이미지 확대 뷰 */}
       {showProfileImage && selectedProfileImage && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 safe-area-inset"
           onClick={() => {
             setShowProfileImage(false);
             setSelectedProfileImage(null);
           }}
         >
-          <div className="relative">
+          <div className="relative max-w-full max-h-full">
             <img
               src={selectedProfileImage}
               alt="프로필 확대"
-              className="w-[400px] h-[400px] object-cover rounded-lg shadow-2xl"
+              className="max-w-full max-h-[80dvh] w-auto h-auto object-contain rounded-lg shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             />
             <button
@@ -78,23 +78,34 @@ export default function InboxView({ onSelectCharacter, onOpenChat }) {
         </div>
       )}
 
-      <div className="flex flex-col h-screen max-w-md mx-auto bg-white border-x border-gray-200 shadow-xl font-sans text-gray-900 overflow-hidden">
-        <header className="px-4 py-4 flex items-center justify-between sticky top-0 bg-white border-b z-10">
+      <div className="flex flex-col h-full w-full max-w-md mx-auto bg-white border-x border-gray-200 shadow-xl font-sans text-gray-900 overflow-hidden">
+        <header className="px-4 py-4 flex items-center justify-between sticky top-0 bg-white border-b z-10 safe-area-top">
           <div className="flex items-center gap-2">
             <h1 className="text-xl font-bold tracking-tight">instagram_user</h1>
             <ChevronLeft className="w-4 h-4 rotate-[270deg]" />
           </div>
           <div className="flex items-center gap-6">
-            <Video className="w-6 h-6" />
-            <Plus
-              className="w-6 h-6 cursor-pointer hover:text-blue-500"
+            <button 
+              type="button"
+              className="touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
+            >
+              <Video className="w-6 h-6" />
+            </button>
+            <button
+              type="button"
+              className="touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center hover:text-blue-500"
               onClick={() => setShowCharacterList(true)}
               title="캐릭터 추가"
-            />
-            <Settings
-              className={`w-6 h-6 cursor-pointer ${showSettings ? 'text-blue-500' : ''}`}
+            >
+              <Plus className="w-6 h-6" />
+            </button>
+            <button
+              type="button"
+              className={`touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center ${showSettings ? 'text-blue-500' : ''}`}
               onClick={() => setShowSettings(!showSettings)}
-            />
+            >
+              <Settings className="w-6 h-6" />
+            </button>
           </div>
         </header>
 
@@ -122,7 +133,7 @@ export default function InboxView({ onSelectCharacter, onOpenChat }) {
           </div>
         )}
 
-        <div className="p-4 flex flex-1 flex-col overflow-y-auto">
+        <div className="p-4 flex flex-1 flex-col overflow-y-auto overscroll-contain">
           <div className="flex items-center gap-3 bg-gray-100 rounded-xl px-3 py-2 text-gray-500 mb-4">
             <Search className="w-4 h-4" />
             <input type="text" placeholder="검색" className="bg-transparent text-sm outline-none w-full" />
