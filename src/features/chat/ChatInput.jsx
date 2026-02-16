@@ -166,7 +166,7 @@ export default function ChatInput({ onSendMessage, onSendMedia }) {
             <button 
               type="button"
               onClick={handleSend} 
-              className="text-blue-500 font-bold text-[14px] px-3 py-2 touch-manipulation min-w-[44px] min-h-[44px]"
+              className="text-blue-500 font-bold text-[14px] px-3 py-2 touch-manipulation min-w-[44px] min-h-[44px] whitespace-nowrap flex-shrink-0"
             >
               보내기
             </button>
