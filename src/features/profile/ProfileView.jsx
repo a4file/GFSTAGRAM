@@ -8,12 +8,12 @@ import { ArrowLeft, MoreHorizontal, CheckCircle2, User, Heart, MessageCircle, X 
 // 게시물 데이터는 임시로 여기에 포함 (나중에 별도 스토어로 분리 가능)
 const defaultPostsData = {
   jieun: [
-    { id: 1, image: null, gradient: 'from-pink-200 via-pink-300 to-pink-400', caption: '오늘도 평범한 하루였지만, 작은 행복들을 모아봤어 🌿', likes: 23, comments: 5, time: '2일 전' },
-    { id: 2, image: null, gradient: 'from-purple-200 via-pink-300 to-rose-300', caption: '영화관에서 혼자 본 영화가 생각보다 좋았어', likes: 18, comments: 3, time: '5일 전' },
-    { id: 3, image: null, gradient: 'from-blue-200 via-indigo-300 to-purple-300', caption: '비 오는 날엔 이런 분위기가 좋아', likes: 31, comments: 7, time: '1주 전' },
-    { id: 4, image: null, gradient: 'from-rose-200 via-pink-300 to-pink-400', caption: '음악 들으면서 산책하는 게 최고야', likes: 27, comments: 4, time: '1주 전' },
-    { id: 5, image: null, gradient: 'from-pink-300 via-rose-300 to-pink-400', caption: '오늘 하루도 수고했어', likes: 19, comments: 2, time: '2주 전' },
-    { id: 6, image: null, gradient: 'from-indigo-200 via-purple-300 to-pink-300', caption: '천천히, 하지만 꾸준히', likes: 25, comments: 6, time: '2주 전' },
+    { id: 1, image: '/images/posts/jieun/post6.jpg', gradient: 'from-pink-200 via-pink-300 to-pink-400', caption: '오늘도 평범한 하루였지만, 작은 행복들을 모아봤어 🌿', likes: 23, comments: 5, time: '2일 전' },
+    { id: 2, image: '/images/posts/jieun/post5.jpg', gradient: 'from-purple-200 via-pink-300 to-rose-300', caption: '영화관에서 혼자 본 영화가 생각보다 좋았어', likes: 18, comments: 3, time: '5일 전' },
+    { id: 3, image: '/images/posts/jieun/post4.jpg', gradient: 'from-blue-200 via-indigo-300 to-purple-300', caption: '비 오는 날엔 이런 분위기가 좋아', likes: 31, comments: 7, time: '1주 전' },
+    { id: 4, image: '/images/posts/jieun/post3.jpg', gradient: 'from-rose-200 via-pink-300 to-pink-400', caption: '음악 들으면서 산책하는 게 최고야', likes: 27, comments: 4, time: '1주 전' },
+    { id: 5, image: '/images/posts/jieun/post2.jpg', gradient: 'from-pink-300 via-rose-300 to-pink-400', caption: '오늘 하루도 수고했어', likes: 19, comments: 2, time: '2주 전' },
+    { id: 6, image: '/images/posts/jieun/post1.jpg', gradient: 'from-indigo-200 via-purple-300 to-pink-300', caption: '천천히, 하지만 꾸준히', likes: 25, comments: 6, time: '2주 전' },
   ],
   mina: [
     { id: 1, image: '/images/posts/mina/post6.jpg', gradient: 'from-purple-300 via-purple-400 to-purple-500', caption: '오늘도 재밌게 놀았어!', likes: 45, comments: 8, time: '1일 전' },
